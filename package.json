@@ -1,10 +1,11 @@
 {
   "name": "park-festival-collaboration",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
-  "description": "领域事件基础校验",
+  "description": "公园节令联名履约后端：事件溯源领域内核",
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "walkthrough": "node scripts/walkthrough.mjs"
   }
 }

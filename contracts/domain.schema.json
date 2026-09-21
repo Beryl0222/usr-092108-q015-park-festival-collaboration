@@ -19,20 +19,68 @@
     "event_type": {
       "type": "string",
       "enum": [
+        "COLLABORATION_REGISTERED",
+        "CULTURAL_ELEMENT_LICENSED",
+        "LICENSE_SCOPE_NARROWED",
         "DESIGN_CLEARED",
+        "DESIGN_VERSION_SUPERSEDED",
+        "RECIPE_REGISTERED",
+        "RECIPE_REVISED",
+        "RECIPE_FLAVOR_INSPECTION_FAILED",
+        "CAPACITY_DECLARED",
+        "CAPACITY_CONSUMED",
+        "LABEL_VERSION_APPROVED",
+        "LABEL_VERSION_WITHDRAWN",
+        "FOOD_BATCH_PRODUCED",
+        "NONFOOD_COMPONENT_RECEIVED",
+        "LOT_LABEL_REFRESHED",
         "COMPONENT_ACCEPTED",
+        "COMPONENT_QUARANTINED",
+        "COMPONENT_ALLOCATED",
+        "COMPONENT_SCRAPPED",
+        "COMPONENT_RECALLED",
+        "BUNDLE_DEFINED",
+        "BUNDLE_BATCH_ASSEMBLED",
         "BUNDLE_RELEASED",
+        "BUNDLE_BATCH_BLOCKED",
+        "BUNDLE_BATCH_DISPOSED",
+        "BUNDLE_BATCH_RECALLED",
+        "CHANNEL_QUOTA_OPENED",
+        "QUOTA_SUPPLIED",
+        "QUOTA_SUPPLY_QUARANTINED",
+        "QUOTA_RESERVED",
+        "QUOTA_RESERVATION_CONFIRMED",
+        "QUOTA_RESERVATION_RELEASED",
         "ORDER_RESERVED",
-        "REMEDY_COMPLETED"
+        "CUSTOMER_SELECTIONS_CONFIRMED",
+        "PAYMENT_RECEIVED",
+        "ORDER_CANCELLED",
+        "PICKUP_COMPLETED",
+        "SHIPMENT_DISPATCHED",
+        "SHIPMENT_DELIVERED",
+        "DAMAGE_REPORTED",
+        "REPLACEMENT_SHIPPED",
+        "REPLACEMENT_DELIVERED",
+        "ORDER_FULFILLMENT_HOLD",
+        "ORDER_RECALL_NOTICE",
+        "REMEDY_COMPLETED",
+        "SETTLEMENT_CLEARED"
       ]
     },
     "aggregate_type": {
       "type": "string",
       "enum": [
         "collaboration_design",
+        "cultural_license",
+        "food_recipe",
+        "production_capacity",
+        "label_catalog",
         "component_lot",
+        "bundle_definition",
         "bundle_batch",
-        "customer_order"
+        "channel_quota",
+        "customer_order",
+        "partner_settlement"
       ]
     },
     "aggregate_id": {
@@ -50,6 +98,9 @@
     "summary": {
       "type": "string",
       "minLength": 1
+    },
+    "data": {
+      "type": "object"
     }
   },
   "additionalProperties": true
