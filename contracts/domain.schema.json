@@ -19,20 +19,44 @@
     "event_type": {
       "type": "string",
       "enum": [
+        "CAPACITY_DEFINED",
+        "LICENSE_GRANTED",
+        "LICENSE_NARROWED",
         "DESIGN_CLEARED",
+        "RECIPE_REGISTERED",
+        "BUNDLE_SPEC_DEFINED",
+        "LABEL_PUBLISHED",
+        "FOOD_BATCH_PRODUCED",
+        "FOOD_BATCH_QUARANTINED",
+        "FOOD_BATCH_DISPOSED",
         "COMPONENT_ACCEPTED",
+        "BUNDLE_ASSEMBLED",
         "BUNDLE_RELEASED",
+        "BUNDLE_HELD",
+        "QUOTA_ALLOCATED",
         "ORDER_RESERVED",
-        "REMEDY_COMPLETED"
+        "RESERVATION_EXPIRED",
+        "ORDER_CANCELLED",
+        "ORDER_FULFILLED",
+        "REMEDY_SHIPPED",
+        "REMEDY_COMPLETED",
+        "SETTLEMENT_RECORDED"
       ]
     },
     "aggregate_type": {
       "type": "string",
       "enum": [
+        "capacity_pool",
+        "cultural_license",
         "collaboration_design",
+        "recipe",
+        "bundle_spec",
+        "food_batch",
         "component_lot",
         "bundle_batch",
-        "customer_order"
+        "channel_quota",
+        "customer_order",
+        "partner_settlement"
       ]
     },
     "aggregate_id": {
@@ -50,6 +74,10 @@
     "summary": {
       "type": "string",
       "minLength": 1
+    },
+    "payload": {
+      "type": "object",
+      "description": "各事件类型的业务负载，由命令层产出、折叠层消费"
     }
   },
   "additionalProperties": true

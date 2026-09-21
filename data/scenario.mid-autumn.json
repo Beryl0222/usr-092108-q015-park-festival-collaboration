@@ -1,0 +1,281 @@
+[
+  {
+    "event_id": "cap-handmade-900g-e1",
+    "event_type": "CAPACITY_DEFINED",
+    "aggregate_type": "capacity_pool",
+    "aggregate_id": "handmade_900g",
+    "occurred_at": "2026-09-01T09:00:00+08:00",
+    "version": 1,
+    "summary": "登记900克手工产能：300",
+    "payload": { "kind": "handmade_900g", "total": 300 }
+  },
+  {
+    "event_id": "cap-standard-e1",
+    "event_type": "CAPACITY_DEFINED",
+    "aggregate_type": "capacity_pool",
+    "aggregate_id": "standard",
+    "occurred_at": "2026-09-01T09:01:00+08:00",
+    "version": 1,
+    "summary": "登记标准礼盒产能：2000",
+    "payload": { "kind": "standard", "total": 2000 }
+  },
+  {
+    "event_id": "lic-gujian-e1",
+    "event_type": "LICENSE_GRANTED",
+    "aggregate_type": "cultural_license",
+    "aggregate_id": "lic-gujian",
+    "occurred_at": "2026-08-01T10:00:00+08:00",
+    "version": 1,
+    "summary": "授予古建纹样授权，覆盖版次 v1、v2",
+    "payload": {
+      "elements": ["古建纹样-璇子彩画", "古建纹样-和玺彩画"],
+      "design_versions": ["v1", "v2"],
+      "valid_from": "2026-08-01T00:00:00+08:00"
+    }
+  },
+  {
+    "event_id": "design-moon-e1",
+    "event_type": "DESIGN_CLEARED",
+    "aggregate_type": "collaboration_design",
+    "aggregate_id": "design-moon",
+    "occurred_at": "2026-08-05T14:00:00+08:00",
+    "version": 1,
+    "summary": "放行中秋联名设计版次 v1",
+    "payload": { "version": "v1", "license_id": "lic-gujian", "elements": ["古建纹样-璇子彩画"] }
+  },
+  {
+    "event_id": "design-moon-e2",
+    "event_type": "DESIGN_CLEARED",
+    "aggregate_type": "collaboration_design",
+    "aggregate_id": "design-moon",
+    "occurred_at": "2026-08-20T14:00:00+08:00",
+    "version": 2,
+    "summary": "放行中秋联名设计版次 v2",
+    "payload": { "version": "v2", "license_id": "lic-gujian", "elements": ["古建纹样-和玺彩画"] }
+  },
+  {
+    "event_id": "recipe-lianrong-e1",
+    "event_type": "RECIPE_REGISTERED",
+    "aggregate_type": "recipe",
+    "aggregate_id": "recipe-莲蓉",
+    "occurred_at": "2026-08-25T10:00:00+08:00",
+    "version": 1,
+    "summary": "登记莲蓉配方，过敏原：蛋黄",
+    "payload": { "flavor": "莲蓉", "allergens": ["蛋黄"] }
+  },
+  {
+    "event_id": "recipe-wuren-e1",
+    "event_type": "RECIPE_REGISTERED",
+    "aggregate_type": "recipe",
+    "aggregate_id": "recipe-五仁",
+    "occurred_at": "2026-08-25T10:05:00+08:00",
+    "version": 1,
+    "summary": "登记五仁配方，过敏原：坚果、芝麻",
+    "payload": { "flavor": "五仁", "allergens": ["坚果", "芝麻"] }
+  },
+  {
+    "event_id": "spec-standard-e1",
+    "event_type": "BUNDLE_SPEC_DEFINED",
+    "aggregate_type": "bundle_spec",
+    "aggregate_id": "spec-standard",
+    "occurred_at": "2026-08-28T09:00:00+08:00",
+    "version": 1,
+    "summary": "定义标准中秋礼盒规格",
+    "payload": {
+      "kind": "standard",
+      "components": [
+        { "component_type": "sachet", "qty_per": 1 },
+        { "component_type": "tea", "qty_per": 1 },
+        { "component_type": "card", "qty_per": 1 }
+      ],
+      "flavors": [
+        { "flavor": "莲蓉", "qty_per": 1 },
+        { "flavor": "五仁", "qty_per": 1 }
+      ]
+    }
+  },
+  {
+    "event_id": "spec-standard-e2",
+    "event_type": "LABEL_PUBLISHED",
+    "aggregate_type": "bundle_spec",
+    "aggregate_id": "spec-standard",
+    "occurred_at": "2026-08-30T09:00:00+08:00",
+    "version": 2,
+    "summary": "发布当前标签版次 L2026-09",
+    "payload": { "spec_id": "spec-standard", "label_version": "L2026-09" }
+  },
+  {
+    "event_id": "fb-lotus-01-e1",
+    "event_type": "FOOD_BATCH_PRODUCED",
+    "aggregate_type": "food_batch",
+    "aggregate_id": "fb-lotus-01",
+    "occurred_at": "2026-09-05T08:00:00+08:00",
+    "version": 1,
+    "summary": "生产莲蓉批次 500 件",
+    "payload": {
+      "flavor": "莲蓉",
+      "kind": "standard",
+      "qty": 500,
+      "expires_at": "2026-10-20T23:59:59+08:00",
+      "design_id": "design-moon",
+      "design_version": "v1"
+    }
+  },
+  {
+    "event_id": "fb-wuren-01-e1",
+    "event_type": "FOOD_BATCH_PRODUCED",
+    "aggregate_type": "food_batch",
+    "aggregate_id": "fb-wuren-01",
+    "occurred_at": "2026-09-05T09:00:00+08:00",
+    "version": 1,
+    "summary": "生产五仁批次 500 件",
+    "payload": {
+      "flavor": "五仁",
+      "kind": "standard",
+      "qty": 500,
+      "expires_at": "2026-10-20T23:59:59+08:00",
+      "design_id": "design-moon",
+      "design_version": "v1"
+    }
+  },
+  {
+    "event_id": "lot-sachet-01-e1",
+    "event_type": "COMPONENT_ACCEPTED",
+    "aggregate_type": "component_lot",
+    "aggregate_id": "lot-sachet-01",
+    "occurred_at": "2026-09-06T10:00:00+08:00",
+    "version": 1,
+    "summary": "验收花丝香囊 400 件",
+    "payload": { "component_type": "sachet", "qty": 400, "design_id": "design-moon", "design_version": "v1" }
+  },
+  {
+    "event_id": "lot-tea-01-e1",
+    "event_type": "COMPONENT_ACCEPTED",
+    "aggregate_type": "component_lot",
+    "aggregate_id": "lot-tea-01",
+    "occurred_at": "2026-09-06T10:30:00+08:00",
+    "version": 1,
+    "summary": "验收节令茶饮 400 件",
+    "payload": { "component_type": "tea", "qty": 400 }
+  },
+  {
+    "event_id": "lot-card-01-e1",
+    "event_type": "COMPONENT_ACCEPTED",
+    "aggregate_type": "component_lot",
+    "aggregate_id": "lot-card-01",
+    "occurred_at": "2026-09-06T11:00:00+08:00",
+    "version": 1,
+    "summary": "验收祝福卡 400 件",
+    "payload": { "component_type": "card", "qty": 400, "design_id": "design-moon", "design_version": "v2" }
+  },
+  {
+    "event_id": "bb-01-e1",
+    "event_type": "BUNDLE_ASSEMBLED",
+    "aggregate_type": "bundle_batch",
+    "aggregate_id": "bb-01",
+    "occurred_at": "2026-09-08T15:00:00+08:00",
+    "version": 1,
+    "summary": "装配标准中秋礼盒 200 盒",
+    "payload": {
+      "spec_id": "spec-standard",
+      "qty": 200,
+      "food_batches": ["fb-lotus-01", "fb-wuren-01"],
+      "component_lots": ["lot-sachet-01", "lot-tea-01", "lot-card-01"],
+      "label_version": "L2026-09",
+      "consumed": {
+        "food": { "fb-lotus-01": 200, "fb-wuren-01": 200 },
+        "components": { "lot-sachet-01": 200, "lot-tea-01": 200, "lot-card-01": 200 }
+      }
+    }
+  },
+  {
+    "event_id": "bb-01-e2",
+    "event_type": "BUNDLE_RELEASED",
+    "aggregate_type": "bundle_batch",
+    "aggregate_id": "bb-01",
+    "occurred_at": "2026-09-09T09:00:00+08:00",
+    "version": 2,
+    "summary": "放行装配批次 bb-01",
+    "payload": { "spec_id": "spec-standard", "qty": 200, "label_version": "L2026-09" }
+  },
+  {
+    "event_id": "quota-wenchuang-e1",
+    "event_type": "QUOTA_ALLOCATED",
+    "aggregate_type": "channel_quota",
+    "aggregate_id": "store-wenchuang::spec-standard",
+    "occurred_at": "2026-09-10T09:00:00+08:00",
+    "version": 1,
+    "summary": "文创店渠道配额 120 盒",
+    "payload": { "channel": "store-wenchuang", "spec_id": "spec-standard", "qty": 120 }
+  },
+  {
+    "event_id": "quota-online-e1",
+    "event_type": "QUOTA_ALLOCATED",
+    "aggregate_type": "channel_quota",
+    "aggregate_id": "online::spec-standard",
+    "occurred_at": "2026-09-10T09:05:00+08:00",
+    "version": 1,
+    "summary": "线上渠道配额 80 盒",
+    "payload": { "channel": "online", "spec_id": "spec-standard", "qty": 80 }
+  },
+  {
+    "event_id": "order-001-e1",
+    "event_type": "ORDER_RESERVED",
+    "aggregate_type": "customer_order",
+    "aggregate_id": "order-001",
+    "occurred_at": "2026-09-15T20:00:00+08:00",
+    "version": 1,
+    "summary": "文创店预售 3 盒，门店自提",
+    "payload": {
+      "channel": "store-wenchuang",
+      "spec_id": "spec-standard",
+      "qty": 3,
+      "pickup": { "store": "文创店A", "slot": "2026-09-25T10:00:00+08:00" }
+    }
+  },
+  {
+    "event_id": "order-002-e1",
+    "event_type": "ORDER_RESERVED",
+    "aggregate_type": "customer_order",
+    "aggregate_id": "order-002",
+    "occurred_at": "2026-09-16T12:00:00+08:00",
+    "version": 1,
+    "summary": "线上预售 2 盒",
+    "payload": { "channel": "online", "spec_id": "spec-standard", "qty": 2 }
+  },
+  {
+    "event_id": "order-002-e2",
+    "event_type": "ORDER_CANCELLED",
+    "aggregate_type": "customer_order",
+    "aggregate_id": "order-002",
+    "occurred_at": "2026-09-17T09:00:00+08:00",
+    "version": 2,
+    "summary": "线上订单取消，释放配额",
+    "payload": { "channel": "online", "spec_id": "spec-standard", "qty": 2 }
+  },
+  {
+    "event_id": "order-001-e2",
+    "event_type": "ORDER_FULFILLED",
+    "aggregate_type": "customer_order",
+    "aggregate_id": "order-001",
+    "occurred_at": "2026-09-25T10:05:00+08:00",
+    "version": 2,
+    "summary": "门店自提履约，出自批次 bb-01",
+    "payload": {
+      "method": "pickup",
+      "bundle_batch": "bb-01",
+      "food_batches": ["fb-lotus-01", "fb-wuren-01"],
+      "component_lots": ["lot-sachet-01", "lot-tea-01", "lot-card-01"]
+    }
+  },
+  {
+    "event_id": "settle-2026-09-wenchuang-e1",
+    "event_type": "SETTLEMENT_RECORDED",
+    "aggregate_type": "partner_settlement",
+    "aggregate_id": "settle-2026-09-wenchuang",
+    "occurred_at": "2026-09-30T18:00:00+08:00",
+    "version": 1,
+    "summary": "文创店 2026-09 结算：1 单共 3 盒",
+    "payload": { "channel": "store-wenchuang", "period": "2026-09", "order_ids": ["order-001"], "fulfilled_qty": 3 }
+  }
+]
